@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function CalculateWinner(squares) {
-  const line = [
+  const lines = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -11,7 +11,7 @@ export default function CalculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let i = 0; i < line.length; i++) {
+  for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
@@ -20,7 +20,3 @@ export default function CalculateWinner(squares) {
 
   return null;
 }
-
-const squares = [null, null, null, 'x', 'x', 'o', null, null, null];
-
-console.log(CalculateWinner(squares));
